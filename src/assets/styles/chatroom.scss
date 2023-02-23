@@ -1,0 +1,130 @@
+/*
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: linear-gradient(to right, #6600cc, #993399);
+	background-repeat: no-repeat;
+}
+*/
+.main-container {
+	background-color: #fff;
+	width: 60%;
+	max-width: 1000px;
+	height: 600px;
+	margin: auto;
+	margin-top: 3%;
+	border-radius: 15px;
+}
+
+.source-pane {
+	display: inline-block;
+	width: 28%;
+	height: 100%;
+	border-radius: 15px 0 0 15px;
+}
+
+.config-pane {
+	vertical-align:top;
+	display: inline-block;
+	width: 43.5%;
+	height: 100%;
+	//background-image: linear-gradient(to right, #410b7d, #631b5b);
+	//background-repeat: no-repeat;
+	background-color: purple;
+	border: 0;
+}
+
+.translation-pane {
+	float: right;
+	width: 28%;
+	height: 100%;
+	border-radius: 0 15px 15px 0;
+}
+
+.pane-header {
+	margin: 15px 0 15px 10px;
+	font-family:Arial;
+	color: #90a0a3;
+}
+
+.translation-content {
+	margin: 10px;
+	font-family: Arial;
+	font-size:10pt;
+	color: #829093;
+	overflow-y: scroll;
+	max-height:530px;
+}
+
+.center-pane-header-container {
+	width:250px;
+	margin:40px auto;
+}
+
+.center-pane-header {
+	font-family: Arial;
+	font-size: 11pt;
+	color: #edf5f6;
+}
+
+.center-pane-content {
+	font-family: Arial;
+	color: #edf5f6;
+}
+
+.translate-icon-container {
+	margin: 40px auto;
+	width: 200px;
+}
+
+#google-translate-img {
+	height: 200px;
+	width: 200px;
+}
+
+.mic-icon-container {
+	margin:10px auto;
+	width: 75px;
+}
+
+.mic-icon {
+	height: 75px;
+	width: 75px;
+	cursor:pointer;
+}
+
+.text-input-container {
+	margin: 10px auto;
+	width: 95%;
+}
+
+#text-input-msg {
+	margin: auto;
+	width: 91%;
+	padding: 1rem;
+	border: 1px solid;
+	border-radius: 5px;
+	font-size:16pt;
+}
+
+#go-arrow {
+	height: 45px;
+	width: 45px;
+	position:relative;
+	bottom:53px;
+	left:88%;
+	cursor:pointer;
+}
+
+.transText {
+	font-size: 14pt;
+}
+
+.transTextColor {
+	color: blue;
+}

@@ -1,0 +1,30 @@
+@import "~bootstrap/scss/bootstrap";
+
+$purple: purple;
+$pink: pink;
+
+.page {
+  padding: 25px;
+}
+
+.page-header {
+  font-size: large;
+  text-align: center;
+}
+
+.page-body {
+  text-align: left;
+}
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: $pink;
+    color: $purple;
+  }
