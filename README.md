@@ -4,10 +4,10 @@ This is the codebase for a personal website to also be used as a portfolio to de
 
 ## Tools/Libraries Used
 
--[Create React App](https://github.com/facebook/create-react-app)
--[React Bootstrap](https://react-bootstrap.github.io/)
--[React Router](https://reactrouter.com/en/main)
--[Sass Lang](https://sass-lang.com/)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [React Router](https://reactrouter.com/en/main)
+- [Sass Lang](https://sass-lang.com/)
 
 ## Still a work in progress.  More to come shortly.
 
