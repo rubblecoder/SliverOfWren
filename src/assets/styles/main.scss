@@ -2,7 +2,20 @@
 
 $purple: purple;
 $pink: pink;
+$white: white;
 
+// site styles
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: $pink;
+  color: $purple;
+}
+
+.opp-text {
+  color: $pink;
+}
+// page styles
 .page {
   padding: 25px;
 }
@@ -16,15 +29,98 @@ $pink: pink;
   text-align: left;
 }
 
+// chatroom styles
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#main-chatroom-container {
+  width: 80%;
+  height: 500px;
+  margin: auto;
+  margin-top: 3%;
+  border-radius: 15px;
+  background-color: $white;
+}
+
+.source-pane {
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	border-radius: 15px 0 0 15px;
+}
+
+.config-pane {
+	vertical-align:top;
+	display: inline-block;
+	width: 60%;
+	height: 100%;
+  background-image: linear-gradient(to right, #6600cc, #993399);
+	background-repeat: no-repeat;
+	border: 0;
+}
+
+.mic-icon-container {
+	margin: 100px auto;
+	width: 125px;
+}
+
+.mic-icon {
+	height: 125px;
+	width: 125px;
+	cursor:pointer;
+}
+
+.text-input-container {
+	margin: 10px;
+	width: 95%;
+}
+
+#text-input-msg {
+	margin: auto;
+	width: 85%;
+	padding: 1rem;
+	border: 1px solid;
+	border-radius: 5px;
+	font-size:14pt;
+}
+
+#go-arrow {
+	height: 45px;
+	width: 45px;
+	//position:relative;
+	//bottom:53px;
+	//left:82%;
+	cursor:pointer;
+}
 
 
 
 
 
 
-body {
-    margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: $pink;
-    color: $purple;
-  }
+
+
+
+
+.translation-pane {
+	float: right;
+	width: 20%;
+	height: 100%;
+	border-radius: 0 15px 15px 0;
+}
+
+.pane-header {
+	margin: 15px 0 15px 10px;
+  text-align: center;
+}
+
+.translation-content {
+	margin: 10px;
+	font-size:10pt;
+	overflow-y: scroll;
+	max-height:530px;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './assets/styles/index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './layouts/main'
 import NoPage from './pages/NoPage'
