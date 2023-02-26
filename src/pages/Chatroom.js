@@ -4,46 +4,22 @@ import '../assets/styles/chatroom.scss';
 import micIcon from '../assets/images/microphone.png';
 import micIconGreen from '../assets/images/microphone-green.png';
 import micIconRed from '../assets/images/microphone-red.png';
-import rightArrow from '../assets/images/right-arrow.png';
+import Messages from '../components/messages';
+import MessageInput from '../components/messageinput';
 
-const socket = io();
+//const socket = io();
 
 function Chatroom() {
     const [image, setImage] = useState(micIcon);
     const [micStatus, setMicStatus] = useState(false);
+    const [socket, setSocket] = useState(null);
   
-    const [isConnected, setIsConnected] = useState(socket.connected);
-    const [lastPong, setLastPong] = useState(null);
-
     useEffect(() => {
-        socket.on('connect', () => {
-          setIsConnected(true);
-        });
-    
-        socket.on('disconnect', () => {
-          setIsConnected(false);
-        });
-    
-        socket.on('pong', () => {
-          setLastPong(new Date().toISOString());
-        });
-    
-        return () => {
-          socket.off('connect');
-          socket.off('disconnect');
-          socket.off('pong');
-        };
-      }, []);
-
-      const sendPing = () => {
-        socket.emit('ping');
-        alert("test");
-      }
-
-    function test() {
-        alert("test");
-    }
-
+      const newSocket = io(`http://${window.location.hostname}:3000`);
+      setSocket(newSocket);
+      return () => newSocket.close();
+    }, [setSocket]);
+  
     function toggleMic() {
         if (micStatus) {
             //stopMic();
@@ -62,8 +38,13 @@ function Chatroom() {
             <div className="source-pane">
                 <div className="pane-header">English</div>
                 <div id="en-msg-container" className="translation-content">
-                    <p>Connected: { '' + isConnected }</p>
-                    <p>Last Pong: { lastPong || '-' }</p>
+                    { socket ? (
+                        <div className="chat-container">
+                            <Messages socket={socket} />
+                        </div>
+                        ) : (
+                        <div>Not Connected</div>
+                    )}
                 </div>
             </div>
             <div className="config-pane">
@@ -72,13 +53,20 @@ function Chatroom() {
                     <img alt="Toggle Mic Button" id="mic-icon" className="mic-icon" src={image} border="0" onClick={toggleMic} />
                 </div>
                 <div className="text-input-container" valign="bottom">
-                    <input type="text" id="text-input-msg" placeholder="Write text to speech here..." />
-                    <img alt="Send Text Button" id="go-arrow" src={rightArrow} onClick={ sendPing }  />
+                    <MessageInput socket={socket} />
                 </div>
             </div>
             <div className="translation-pane">
-                <div className="pane-header">Spanish</div>
-                <div id="sp-msg-container" className="translation-content">This is a test <br/>This is a test</div>
+                <div className="pane-header">Spanish (but not yet... WIP)</div>
+                <div id="sp-msg-container" className="translation-content">
+                    { socket ? (
+                        <div className="chat-container">
+                            <Messages socket={socket} />
+                        </div>
+                        ) : (
+                        <div>Not Connected</div>
+                    )}
+                </div>
             </div>
         </div>
     </div>

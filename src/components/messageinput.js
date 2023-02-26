@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import rightArrow from '../assets/images/right-arrow.png';
 
 const NewMessage = ({socket}) => {
   const [value, setValue] = useState('');
@@ -10,14 +11,16 @@ const NewMessage = ({socket}) => {
 
   return (
     <form onSubmit={submitForm}>
-      <input
+      <input 
+        className="text-input-msg" 
+        placeholder="Write text message here..." 
         autoFocus
         value={value}
-        placeholder="Type your message"
         onChange={(e) => {
           setValue(e.currentTarget.value);
         }}
       />
+      <input type="image" className="go-arrow" src={rightArrow} alt="Submit Form" />
     </form>
   );
 };
